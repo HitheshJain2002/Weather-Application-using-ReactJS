@@ -1,0 +1,124 @@
+.temp-app {
+    width: 300px;
+    min-height: 400px;
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    color: white;
+    font-family: 'Arial', sans-serif;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 50px auto;
+    padding: 20px;
+    transition: all 0.3s ease;
+  }
+  
+  .temp-app:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+  }
+  
+  .wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23ffffff' fill-opacity='0.2' d='M0,128L48,138.7C96,149,192,171,288,186.7C384,203,480,213,576,202.7C672,192,768,160,864,144C960,128,1056,128,1152,144C1248,160,1344,192,1392,208L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+    background-size: 100% 100px;
+    animation: wave 10s linear infinite;
+  }
+  
+  @keyframes wave {
+    0% { background-position-x: 0; }
+    100% { background-position-x: 1440px; }
+  }
+  
+  .content {
+    z-index: 1;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .input-data {
+    margin-bottom: 20px;
+  }
+  
+  .input-field {
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    transition: all 0.3s ease;
+  }
+  
+  .input-field:focus {
+    background-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  }
+  
+  .input-field::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+  }
+  
+  .location {
+    font-size: 24px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .location i {
+    margin-right: 10px;
+  }
+  
+  .temp {
+    font-size: 48px;
+    margin: 15px 0;
+  }
+  
+  .temp-min-max, .wind, .humidity {
+    font-size: 16px;
+    opacity: 0.8;
+    margin: 12px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+  }
+  
+  .temp-min-max:hover, .wind:hover, .humidity:hover {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  
+  .wind-icon, .humidity-icon {
+    margin-right: 12px;
+    font-size: 20px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+  }
+  
+  .wind:hover .wind-icon, .humidity:hover .humidity-icon {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: rotate(15deg);
+  }
+  
+  .fa-wind, .fa-droplet {
+    opacity: 0.7;
+  }
